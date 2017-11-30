@@ -1,0 +1,30 @@
+
+Exercice 1:
+
+1) //TITRE/text()
+2) //GENRE[contains(text(),"Horreur")]/parent::*/TITRE/text()
+3) //FILM[TITRE = "Alien"]/RESUME/text()
+4) //FILM[ROLES/ROLE[contains(PRENOM/text() , "James") and NOM = "Stewart"]]/TITRE/text()
+5) //FILM[ROLES[ROLE[PRENOM ="James" and NOM = "Stewart"] and ROLE[PRENOM ="Kim" and NOM = "Novak"]  ]]/TITRE/text()
+6) //FILM[count(RESUME)=1]/TITRE/text()
+7) //FILM[count(RESUME)=0]/TITRE/text()
+8) //FILM[TITRE="Vertigo"]/MES/@idref
+9) //FILM[TITRE="Reservoir dogs"]/ROLES/ROLE[PRENOM="Harvey" and NOM="Keitel"]/INTITULE/text()
+10) /descendant::FILM[last()]
+//FILM[last()]
+11) //FILM[TITRE="Shining"]/preceding-sibling::*[1]/TITRE/text()
+12) /FILMS/FILM[TITRE = "Eyes Wide Shut"]/MES/@idref/text()
+13) /FILMS/FILM/TITRE[contains(text(), "V")]/text()
+14) /descendant::*[count(child::*) = 3]
+15) /descendant::*[contains(name(), "TU")]
+
+
+Exercice 2:
+
+1) //pays[frontière[@pays = "p1"]]/nom/text(
+2) //pays[@continent = //continent[@nom="Europe"]/@n]/nom/text()
+3) //pays[count(langue)>=2 and @population>10]/langue/text()
+4) //pays[@continent="c1"]/langue[@pourcentage>=10 and @pourcentage<=20]/text()
+5) //pays[@n = //montagne[@altitude>4000]/situation/@pays]/nom/text()
+6) //pays[@n = //montagne[@altitude>4000]/situation/@pays and @continent = //continent[@nom="Europe"]/@n ]/nom/text()
+7) 

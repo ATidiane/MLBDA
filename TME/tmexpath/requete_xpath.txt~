@@ -1,0 +1,7 @@
+
+Exercice 1:
+
+1) //TITRE/text()
+2) //GENRE[contains(text(),"Horreur")]/parent::*/TITRE/text()
+3) //FILM[TITRE = "Alien"]/RESUME/text()
+4) //FILM[ROLES/ROLE[contains(PRENOM/text() , "James") and NOM = "Stewart"]]/TITRE/text()
