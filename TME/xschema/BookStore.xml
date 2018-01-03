@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <BookStore xmlns="http://www.books.org"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xsi:schemaLocation=
-                          "http://www.books.org
-                           BookStore.xsd">
+           xsi:schemaLocation="http://www.books.org/BookStore.xsd">
         <Book>
                 <Title>My Life and Times</Title>
                 <Author>Paul McCartney</Author>

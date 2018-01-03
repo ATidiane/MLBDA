@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xs:schema SYSTEM "XMLSchema.dtd">
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.books.org"
+            xmlns="http://www.books.org"
+            elementFormDefault="qualified">
+
+  <xs:element name="Bookstore">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Book" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Title" type="xs:string"/>
+              <xs:element name="Author" type="xs:string"/>
+              <xs:element name="Date">
+                <xs:simpleType>
+                  <xs:restriction base="xs:integer">
+                    <xs:pattern value="\d{4}"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ISBN">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="\d-\d-\d+-\d"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Publisher" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

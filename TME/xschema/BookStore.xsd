@@ -5,11 +5,11 @@
             targetNamespace="http://www.books.org"
             xmlns="http://www.books.org"
             elementFormDefault="qualified">
-  
-  <xs:element name="BookStore">
+
+  <xs:element name="Bookstore">
     <xs:complexType>
-      <xs:sequence maxOccurs="unbounded">
-	<xs:element ref="Book"/>
+      <xs:sequence  maxOccurs="unbounded">
+        <xs:element name="Book"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -17,29 +17,27 @@
   <xs:element name="Book">
     <xs:complexType>
       <xs:sequence>
-	<xs:element name="Title" type="xs:string"/>
-	<xs:element name="Author" type="xs:string"/>
-	<xs:element ref="Date"/>
-	<xs:element ref="ISBN"/>
-	<xs:element name="Publisher" type="xs:string"/>
+        <xs:element name="Title" type="xs:string"/>
+        <xs:element name="Author" type="xs:string"/>
+        <xs:element ref="Date"/>
+        <xs:element ref="ISBN"/>
+        <xs:element name="Publisher" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:simpleType name="annee">
     <xs:restriction base="xs:integer">
       <xs:pattern value="\d{4}"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="Date" type="annee"/>
-
-  <xs:simpleType name="code">
+  
+  <xs:simpleType name="code">     
     <xs:restriction base="xs:string">
-      <xs:pattern value="\d-\d+-\d+-\d"/>
-    </xs:restriction>
+      <xs:pattern value="\d-\d-\d+-\d"/>
+      </xs:restriction>
   </xs:simpleType>
   <xs:element name="ISBN" type="code"/>
-
-  
+    
 </xs:schema>
-

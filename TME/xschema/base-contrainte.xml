@@ -6,7 +6,7 @@
 
 
 <base  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:noNamespaceSchemaLocation="base-contrainte.xsd">
+       xsi:noNamespaceSchemaLocation="base-contrainteR.xsd">
 
   <restaurant nom="la tour d'argent" etoile="3" ville="Paris">
     <fermeture>dimanche et lundi</fermeture>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xs:schema SYSTEM "XMLSchema.dtd">
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.books.org"
+            xmlns="http://www.books.org"
+            elementFormDefault="qualified">
+
+  <xs:element name="base">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="restaurant"/>
+        <xs:element ref="ville"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="restotype">
+    <xs:sequence>
+      <xs:element name="fermeture" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element ref="menu" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="nom" type="xs:string" use="required"/>
+    <xs:attribute name="etoile" type="xs:integer" use="required"/>
+    <xs:attribute name="ville" type="xs:string" use="required"/>
+  </xs:complexType>
+  <xs:element name="restaurant" type="restotype"/>
+
+  <xs:complexType name="menutype">
+    <xs:attribute name="nom" type="xs:string" use="required"/>
+    <xs:attribute name="prix" type="xs:integer" use="required"/>
+  </xs:complexType>
+  <xs:element name="menu" type="menutype"/>
+
+  <xs:complexType name="villetype">
+    <xs:sequence>
+      <xs:element ref="plusBeauMonument" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="nom" type="xs:string" use="required"/>
+    <xs:attribute name="departement" type="xs:integer" use="required"/> 
+  </xs:complexType>
+  <xs:element name="ville" type="villetype"/>
+
+  <xs:complexType name="plusBeauMonumenttype">
+    <xs:attribute name="nom" type="xs:string" use="required"/>
+    <xs:attribute name="tarif" type="xs:integer" use="required"/>
+  </xs:complexType>
+  <xs:element name="plusBeauMonument" type="plusBeauMonumenttype"/>
+  
+</xs:schema>
