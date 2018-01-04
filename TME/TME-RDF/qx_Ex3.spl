@@ -1,0 +1,82 @@
+base <http://example.org>
+prefix foaf: <http://xmlns.com/foaf/0.1/> 
+prefix rel: <http://www.perceive.net/schemas/relationship/> 
+prefix : <http://example.org/> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix univ: <http://www.faculty.ac>
+
+#SELECT distinct ?p
+#WHERE
+#{
+#?p ?v ?m
+#}
+
+#Select distinct ?v
+#Where {
+#{ ?p :livesIn ?v  }
+#UNION
+#{ ?e :studiedAt ?u . ?u :locatedAt ?v}
+#}
+
+#Select distinct ?p
+#Where  {
+#?p :studiedAt ?u .
+#{ ?p :hasMother ?m . ?m :studiedAt ?u }
+#UNION
+#{ ?p :hasFather ?f . ?f :studiedAt ?u}
+#}
+
+#Select ?p
+#Where {
+#?p :studiedAt ?u .
+#{ ?p :hasMother ?m . ?m :studiedAt ?u }
+#.
+#{ ?p :hasFather ?f . ?f :studiedAt ?u}
+#}
+
+#Select ?p
+#Where {
+#?p :studiedAt ?u .
+#OPTIONAL {
+#{ ?p :hasMother ?m . ?m :studiedAt ?u } }
+#FILTER (!bound(?p)) .
+#OPTIONAL { ?p :hasFather ?f . ?f :studiedAt ?u} .
+#FILTER (!bound(?p))
+#}
+
+#Select ?p ?u
+#Where {
+#?p a :Person . ?p :studiedAt ?u .
+#{ { ?p :hasBrother ?b } UNION { ?p :hasSister ?s } }
+#}
+
+#Select ?p ?u
+#Where {
+#?p a :Person . ?p :studiedAt ?u .
+#{ { ?p :hasBrother ?b } UNION { ?p :hasSister ?s } } .
+#Optional { { ?b :studiedAt ?u } UNION { ?s :studiedAt ?u } } .
+#Filter(!bound(?u))
+#}
+
+#Select ?p
+#Where {
+#?p :studiedAt ?u . ?u :locatedAt ?v . ?p :livesIn ?w . Filter(?v != ?w)
+#}
+
+#Select ?p
+#Where {
+#?p:studiedAt ?u . ?p :livesIn ?v
+#Minus {
+#?p :studiedAt ?u . ?u :locatedAt ?v
+#}
+#}
+
+#SELECT distinct ?o
+#where {
+#{ { ?a :friend ?o } UNION { ?o :friend ?v } UNION { ?v :friend :liz } }
+#MINUS
+#{ { ?o :friend ?v } UNION { ?v :friend :liz } }
+#}
+
+
+

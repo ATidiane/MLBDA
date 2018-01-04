@@ -1,0 +1,17 @@
+
+Exercice 1:
+//TITRE/text()
+//FILM[GENRE/text() = "Horreur"]/TITRE/text()
+//FILM[TITRE = "Alien"]/RESUME/text()
+//FILM[ROLES/ROLE[PRENOM = "James" and NOM = "Stewart"]]/TITRE/text()
+//FILM[ROLES/ROLE[PRENOM = "James" and NOM = "Stewart"] and ROLES/ROLE[PRENOM = "Kim" and NOM ="Novak"]]/TITRE/text()
+//FILM[RESUME]/TITRE/text()
+//FILM[not(RESUME)]/TITRE/text()
+//FILM[TITRE = "Vertigo"]/MES/@idref/text()
+//FILM[TITRE = "Reservoir dogs"]/ROLES/ROLE[PRENOM="Harvey" and NOM="Keitel"]/INTITULE/text()
+//FILM[last()]
+//FILM[TITRE="Shining"]/preceding-sibling::*[1]
+//FILM[TITRE="Eyes Wide Shut"]/MES/@idref
+//FILM[contains(TITRE/text(), "V")]/TITRE/text()
+//*[count(descendant::*) = "3" ]
+//*[contains(name(),  "TU")]

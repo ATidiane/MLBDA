@@ -1,0 +1,38 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX f: <http://www.cems.uwe.ac.uk/empdept/concept/>
+PREFIX : <http://www.abc.org/>
+PREFIX xs: <http://www.w3.org/2001/XMLSchema#>
+
+#SELECT count(distinct ?d)
+#WHERE {
+#?p f:Dept ?d
+#} 
+
+#Select ?e1 ?s1 ?e2 ?s2
+#Where {
+#?e1 f:Sal ?s1 . ?e2 f:Sal ?s2 .
+#Filter(xs:integer(?s1) - xs:integer(?s2) > 5)
+#}
+
+#Select ?e1 ?e2 ?s
+#Where {
+#?e1 f:Sal ?s . ?e2 f:Sal ?s . Filter(str(?e1) > str(?e2))
+#}
+
+#Select ?e ?s
+#Where {
+#?e f:Sal ?s
+#MINUS
+#{ ?e f:Sal ?s . ?ex f:Sal ?sx . 
+#Filter(xs:integer(?s) - xs:integer(?sx) < 0) }
+#}
+
+#Select ?e ?s
+#Where {
+#?e f:Sal ?s
+#}
+#Order by desc(?s)
+#Limit 1
+
