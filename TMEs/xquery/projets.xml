@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<projects>
+  <project name='Accounting'>
+    <employee><ln> Jenkins</ln><fn> David</fn></employee>
+    <employee><ln>Williams </ln><fn> Jessica</fn> </employee>
+    <employee><ln>Smith </ln><fn>Alex </fn> </employee>
+    <budget> 400 </budget>
+    <location>New York </location>
+    <duration>24 months</duration>
+  </project>
+  <project name='Quality'>
+    <employee><ln>Crosby </ln><fn>Julian </fn></employee>
+    <employee><ln> Williams</ln><fn>Jessica </fn> </employee>
+    <employee><ln> Perry</ln><fn>Karl </fn> </employee>
+    <budget> 200 </budget>
+    <location> San Francisco</location>
+  </project>
+  <project name='Design'>
+    <employee><ln>Crosby </ln><fn>Williams </fn></employee>
+    <employee><ln> Thomas</ln><fn>Martin </fn> </employee>
+    <location>San Francisco</location>
+    <budget>100</budget>
+    <duration>12 months </duration>
+  </project>
+</projects>

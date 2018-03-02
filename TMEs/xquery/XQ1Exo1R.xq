@@ -43,6 +43,47 @@ return
 <price>{$auction/price}</price>
 </res> :)
 
-let $e:=//person[not(homepage)]
+(: let $e:=//person[not(homepage)]
 return count($e)
+ :)
+ 
+ (: Examen 2017 :)
+ 
+(: <résultat>
+{ for $l in distinct-values(document("projects.xml")//project/location)
+ return {
+   for $p in document("projects.xml")//project[location=$l]
+   where every $x in document("projects.xml")//project satisfies $x/budget <= $p/budget
+   return $l }
+}
+</résultat> :)
 
+
+(: <résultat> {
+for $e in //employee
+let $p:= //project[employee/ln = $e/ln]
+where every $pp in $p satisfies $pp/location = "San Francisco"
+return $e/ln }
+</résultat> :)
+
+(: <résultat>
+{
+  for $p in //project
+  return 
+  if (exists($p/duration))
+  then <duration project="{$p/@name}"> {$p/duration/text()} </duration>
+  else <unknown-duration project="{$p/@name}" />
+}
+</résultat> :)
+
+
+<résultat>
+{
+  for $p in //project
+  let $d := $p/duration
+  return
+    if (exists($d)) 
+    then <duration project='{$p/@name}' >{$d/text()}</duration>
+    else <unknown-duration project='{$p/@name}'/>
+}
+</résultat>
